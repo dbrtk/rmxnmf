@@ -4,8 +4,8 @@ scipy
 
 scikit-learn
 
-
-celery
-redis
-
 pytest
+
+Flask
+Werkzeug
+
