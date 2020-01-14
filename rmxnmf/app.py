@@ -13,15 +13,6 @@ def home():
     return jsonify()
 
 
-@app.route('/features/<objectid:containerid>', methods=["GET"])
-def available_features(containerid: str = None):
-    """
-    Retrieves available features for a container.
-    :return:
-    """
-    pass
-
-
 @app.route('/features/<objectid:containerid>/<int:feats>', methods=["POST"])
 def create_features(containerid: str = None, feats: int = 10):
     """
@@ -30,26 +21,12 @@ def create_features(containerid: str = None, feats: int = 10):
     """
     # access parameters encoded in the url
     request.args.get('')
-    pass
 
+    if 'file' not in request.FILES:
+        return abort(500)
 
-@app.route('/features/<objectid:containerid>/<int:feats>', methods=["GET"])
-def get_features(containerid: str = None, feats: int = None):
-    """
-    Retrieves features for a given container id and a given features number.
-    :return:
-    """
 
     pass
 
-
-@app.route('/features/<objectid:containerid>/<int:feats>', methods=["DELETE"])
-def del_features(containerid: str = None, feats: int = None):
-    """
-    Deletes features for a given container id and features number.
-    :return:
-    """
-
-    pass
 
 
