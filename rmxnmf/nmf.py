@@ -12,13 +12,11 @@ class NMFSklearn(object):
                  init=None,
                  solver: str = 'mu',
                  feats_number: int = 10,
-                 max_iter: int = 200,
-                 max_time=None):
+                 max_iter: int = 200):
 
         self.matrix = matrix
         self.feats_number = feats_number
         self.max_iter = max_iter
-        self.max_time = max_time
         self.init = init
         self.solver = solver
 
@@ -36,7 +34,7 @@ class NMFSklearn(object):
         return W, H
 
 
-def call_nmf(path, feats: int = 10, **kwargs):
+def call_nmf(path, feats: int = 10):
 
     matrix_path = files.matrix(path)
     feats_path = files.features(path)

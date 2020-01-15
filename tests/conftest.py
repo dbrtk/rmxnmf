@@ -1,5 +1,4 @@
 
-import os
 import shutil
 import tempfile
 
@@ -8,14 +7,11 @@ import pytest
 from rmxnmf import app as rmxnmfapp
 from rmxnmf import config
 
-DATA_TMP_FOLDER = 'datatmp'
-
 
 def make_datatmp():
 
     dir = tempfile.mkdtemp()
     config.DATA_FOLDER = dir
-
     return config.DATA_FOLDER
 
 
