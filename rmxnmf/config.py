@@ -1,7 +1,7 @@
 
 import os
 
-DATA_FOLDER = os.path.abspath(os.path.join(os.environ['HOME'], 'data'))
+DATA_FOLDER = os.environ.get('DATA_FOLDER')
 
 MATRIX_FILE_NAME = 'matrix.npy'
 FEATURES_FILE_NAME = 'features.npy'

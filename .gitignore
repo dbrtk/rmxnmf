@@ -8,3 +8,4 @@ rmxnmf.egg-*
 **/*.*~
 nlp/clustering/*.txt
 .pytest_cache
+datatmp

@@ -10,6 +10,7 @@ import numpy
 import pytest
 
 from rmxnmf import config
+from.conftest import make_datatmp
 
 
 @pytest.mark.usefixtures('cls_client')
@@ -23,6 +24,9 @@ class TestTheApp(unittest.TestCase):
         cls.feats = 19
 
     def setUp(self) -> None:
+
+        self.data_path = tempfile.mkdtemp()
+        config.DATA_FOLDER = self.data_path
 
         self.arr = numpy.random.rand(self.W, self.H)
 
@@ -48,6 +52,10 @@ class TestTheApp(unittest.TestCase):
         self.weights = numpy.load(
             os.path.join(tmpdir.name, config.TARGET_WEIGHTS))
         shutil.rmtree(tmpdir.name)
+
+    def tearDown(self) -> None:
+
+        shutil.rmtree(self.data_path)
 
     def test_resp_status_code(self):
 
