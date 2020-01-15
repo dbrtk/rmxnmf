@@ -7,3 +7,4 @@ rmxnmf.egg-*
 **/*.png
 **/*.*~
 nlp/clustering/*.txt
+.pytest_cache

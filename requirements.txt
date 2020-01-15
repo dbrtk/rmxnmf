@@ -7,5 +7,5 @@ scikit-learn
 pytest
 
 Flask
-Werkzeug
 
+requests
