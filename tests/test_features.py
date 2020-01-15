@@ -13,14 +13,18 @@ from rmxnmf import config
 
 
 @pytest.mark.usefixtures('cls_client')
-class Test(unittest.TestCase):
+class TestTheApp(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls) -> None:
+
+        cls.W = 1000
+        cls.H = 100
+        cls.feats = 19
 
     def setUp(self) -> None:
 
-        self.W = 1000
-        self.H = 100
         self.arr = numpy.random.rand(self.W, self.H)
-        self.feats = 23
 
         _file = tempfile.TemporaryFile()
         numpy.save(_file, self.arr)
@@ -79,3 +83,12 @@ class Test(unittest.TestCase):
             (self.feats, self.H)
         )
 
+
+class TestLargeArray(TestTheApp):
+
+    @classmethod
+    def setUpClass(cls) -> None:
+
+        cls.W = 10004
+        cls.H = 1006
+        cls.feats = 19
