@@ -99,3 +99,13 @@ class TestLargeArray(TestTheApp):
         cls.W = 10004
         cls.H = 1006
         cls.feats = 19
+
+
+class TestSmallArray(TestTheApp):
+    """test small array with a feature number larger than min(W, H)."""
+    @classmethod
+    def setUpClass(cls) -> None:
+
+        cls.W = 100
+        cls.H = 10
+        cls.feats = 19
