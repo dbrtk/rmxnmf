@@ -45,14 +45,17 @@ def create_features(feats: int = 10):
     mem_file = io.BytesIO()
     with zipfile.ZipFile(
             mem_file, mode="w", compression=zipfile.ZIP_DEFLATED) as zf:
-        zf.write(feats_path)
-        zf.write(weights_path)
+        zf.write(feats_path, arcname=config.TARGET_FEATURES)
+        zf.write(weights_path, arcname=config.TARGET_WEIGHTS)
 
     shutil.rmtree(path)
-
-    return send_file(mem_file,
-                     attachment_filename='payload.zip',
-                     mimetype='application/zip')
+    mem_file.seek(0)
+    return send_file(
+        mem_file,
+        as_attachment=True,
+        attachment_filename='payload.zip',
+        mimetype='application/zip'
+    )
 
 
 
