@@ -40,7 +40,7 @@ def create_features(feats: int = 10):
         shutil.rmtree(path)
         return abort(403)
 
-    feats_path, weights_path = call_nmf(path=path, **request.args)
+    feats_path, weights_path = call_nmf(path=path, feats=feats, **request.args)
 
     mem_file = io.BytesIO()
     with zipfile.ZipFile(

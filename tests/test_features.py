@@ -20,7 +20,7 @@ class Test(unittest.TestCase):
         self.W = 1000
         self.H = 100
         self.arr = numpy.random.rand(self.W, self.H)
-        self.feats = 10
+        self.feats = 23
 
         _file = tempfile.TemporaryFile()
         numpy.save(_file, self.arr)
