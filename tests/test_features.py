@@ -10,7 +10,6 @@ import numpy
 import pytest
 
 from rmxnmf import config
-from.conftest import make_datatmp
 
 
 @pytest.mark.usefixtures('cls_client')

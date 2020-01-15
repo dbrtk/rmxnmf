@@ -13,9 +13,9 @@ DATA_TMP_FOLDER = 'datatmp'
 
 def make_datatmp():
 
-    if not config.DATA_FOLDER:
-        dir = tempfile.mkdtemp()
-        config.DATA_FOLDER = dir
+    dir = tempfile.mkdtemp()
+    config.DATA_FOLDER = dir
+
     return config.DATA_FOLDER
 
 
