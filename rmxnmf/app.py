@@ -1,5 +1,5 @@
 """
-Flask app that handles http requests and sends files back to the client.
+Flask app for handling NMF.
 """
 
 import io
