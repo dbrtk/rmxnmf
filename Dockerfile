@@ -14,3 +14,4 @@ RUN mkdir /data
 
 ENV DATA_FOLDER '/data'
 
+EXPOSE 8006

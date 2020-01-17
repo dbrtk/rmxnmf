@@ -80,14 +80,14 @@ class TestTheApp(unittest.TestCase):
 
         self.assertEqual(
             self.features.shape,
-            (self.W, self.feats)
+            (self.feats, self.H)
         )
 
     def test_weights_shape(self):
 
         self.assertEqual(
             self.weights.shape,
-            (self.feats, self.H)
+            (self.W, self.feats)
         )
 
 
@@ -102,7 +102,10 @@ class TestLargeArray(TestTheApp):
 
 
 class TestSmallArray(TestTheApp):
-    """test small array with a feature number larger than min(W, H)."""
+    """test small array with a feature number larger than min(W, H).
+    This tests should raise warniing on the level of NMF, but they shouldn't
+    raise errors.
+    """
     @classmethod
     def setUpClass(cls) -> None:
 

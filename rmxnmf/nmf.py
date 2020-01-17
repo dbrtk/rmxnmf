@@ -21,7 +21,6 @@ class NMFSklearn(object):
         self.solver = solver
 
     def factorize(self):
-
         model = NMF(
             n_components=self.feats_number,
             init=self.init,
@@ -49,8 +48,8 @@ def call_nmf(path, feats: int = 10):
     inst = NMFSklearn(matrix=mtrx, feats_number=feats)
     # W = weights; H = features
     W, H = inst.factorize()
-    numpy.save(feats_path, W)
-    numpy.save(weights_path, H)
+    numpy.save(weights_path, W)
+    numpy.save(feats_path, H)
 
     return feats_path, weights_path
 

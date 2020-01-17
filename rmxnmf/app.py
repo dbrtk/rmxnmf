@@ -26,6 +26,7 @@ def home():
 def create_features(feats: int = 10):
     """
     Creates features for a given matrix and features number.
+    It expects an attachment that is a ".npy" file containing an ndarray.
     :return:
     """
     path = make_folder()
