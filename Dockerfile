@@ -11,6 +11,7 @@ RUN pip install -U pip && pip install -e .
 
 # creating a directory that will contain nltk_data
 RUN mkdir /data
+VOLUME /data
 
 ENV DATA_FOLDER '/data'
 
