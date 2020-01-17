@@ -1,4 +1,4 @@
-
+"""Simple NMF used for testing."""
 
 import numpy
 import random
