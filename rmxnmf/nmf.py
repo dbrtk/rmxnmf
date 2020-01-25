@@ -2,8 +2,6 @@
 import numpy
 from sklearn.decomposition import NMF
 
-from . import files
-
 
 class NMFSklearn(object):
 
@@ -33,11 +31,10 @@ class NMFSklearn(object):
         return W, H
 
 
-def call_nmf(path, feats: int = 10):
-
-    matrix_path = files.matrix(path)
-    feats_path = files.features(path)
-    weights_path = files.weights(path)
+def call_nmf(matrix_path: str = None,
+             feats_path: str = None,
+             weights_path: str = None,
+             feats: int = 10):
 
     try:
         mtrx = numpy.load(matrix_path)

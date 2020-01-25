@@ -1,4 +1,7 @@
 
+celery
+redis
+
 numpy
 scipy
 
@@ -6,6 +9,3 @@ scikit-learn
 
 pytest
 
-Flask
-
-requests
