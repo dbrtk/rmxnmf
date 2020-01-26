@@ -18,10 +18,3 @@ CELERY_ROUTES = {
 
 }
 
-RMXBOT_TASKS = {
-
-    'nlp_callback': 'rmxbot.tasks.container.nlp_callback_success',
-
-    'integrity_check_callback': 'rmxbot.tasks.container.integrity_check_callback',
-
-}
