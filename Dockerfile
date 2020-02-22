@@ -13,7 +13,7 @@ RUN pip install -U pip && pip install -e .
 RUN mkdir /data
 VOLUME /data
 
-ENV REDIS_HOST_NAME 'redis'
+ENV BROKER_HOST_NAME 'rabbitmq'
 
 ENV DATA_FOLDER '/data'
 
