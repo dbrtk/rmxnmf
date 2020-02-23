@@ -13,7 +13,7 @@ RUN pip install -U pip && pip install -e .
 RUN mkdir /data
 VOLUME /data
 
-ENV BROKER_HOST_NAME 'rabbitmq'
+ENV BROKER_HOST_NAME 'message_broker'
 
 ENV DATA_FOLDER '/data'
 
