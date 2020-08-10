@@ -11,3 +11,6 @@ TARGET_FEATURES = 'feat.npy'
 TARGET_WEIGHTS = 'weights.npy'
 
 BROKER_HOST_NAME = os.environ.get('BROKER_HOST_NAME')
+
+# celery, redis (auth access) configuration
+REDIS_PASS = os.environ.get('REDIS_PASS')
