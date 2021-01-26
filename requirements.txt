@@ -1,11 +1,8 @@
 
 celery
-redis
+pymongo
 
 numpy
 scipy
 
 scikit-learn
-
-pytest
-

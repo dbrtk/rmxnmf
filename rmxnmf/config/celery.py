@@ -1,11 +1,33 @@
 
-from .app import BROKER_HOST_NAME, REDIS_PASS
+# from .app import BROKER_HOST_NAME, REDIS_PASS
+
+from .app import RPC_HOST, RPC_PASS, RPC_PORT, RPC_USER, RPC_VHOST
+
+# celery backend related imports
+from .app import (DATABASE_USERNAME, DATABASE_PASSWORD, MONGODB_LOCATION,
+                  RPC_DATABASE)
+
+# broker_url = 'amqp://myuser:mypassword@localhost:5672/myvhost'
+_url = f'amqp://{RPC_USER}:{RPC_PASS}@{RPC_HOST}:{RPC_PORT}/{RPC_VHOST}'
 
 
-_url = f'redis://:{REDIS_PASS}@{BROKER_HOST_NAME}:6379/0'
+# _url = f'redis://:{REDIS_PASS}@{BROKER_HOST_NAME}:6379/0'
 
 BROKER_URL = _url
-CELERY_RESULT_BACKEND = _url
+# CELERY_RESULT_BACKEND = _url
+
+CELERY_RESULT_BACKEND = 'mongodb://'
+CELERY_MONGODB_BACKEND_SETTINGS = {
+    'host': MONGODB_LOCATION,
+    'user': DATABASE_USERNAME,
+    'password': DATABASE_PASSWORD,
+    'database_name': RPC_DATABASE
+}
+
+
+
+CELERY_RESULT_PERSISTENT = True
+
 
 
 CELERY_IMPORTS = ('rmxnmf.task', )
